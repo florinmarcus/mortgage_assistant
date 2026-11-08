@@ -51,6 +51,10 @@ docs/
   rules/calendar.md           proposing and booking times
   rules/data-protection.md    UK GDPR and FCA boundaries
 templates/case-file.md        case file template
+.claude/settings.json         guardrails: sending and trashing email blocked, calendar
+                              changes need approval, auto-compact at 200K tokens,
+                              version shown at session start
+.claude/hooks/show-version.sh
 ```
 
 ## Setup (adviser)
