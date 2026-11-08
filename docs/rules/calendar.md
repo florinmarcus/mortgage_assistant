@@ -6,7 +6,8 @@
 2. Check her calendar and pick 3 free slots over the next 5 working days, spread over
    different days and times.
 3. Default length: 30 minutes for a call, 60 minutes for a fact-find.
-4. Put the slots in a draft email to the client. Don't create any event yet.
+4. Show her the 3 slots first and wait for her yes (she may swap one).
+5. Only then put them in a draft email to the client. Don't create any event yet.
 
 ## Booking
 

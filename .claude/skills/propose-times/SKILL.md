@@ -11,8 +11,9 @@ Proposing:
 1. Read working hours in `Assistant preferences`.
 2. Pick 3 free slots in the next 5 working days, on different days. 30 minutes for a call,
    60 for a fact-find, unless she says otherwise.
-3. Draft an email to the client with the 3 slots. Don't create events.
-4. Reply: the 3 slots and "draft ready".
+3. Show her the 3 slots and wait for her yes. She may swap a slot or change the length.
+4. Then draft the email to the client with the agreed slots. Don't create events.
+5. Reply: "Draft ready in Gmail".
 
 Booking (only after the client confirms and she says yes):
 - Title `<Client name> - <purpose>`. Description: case folder name only.

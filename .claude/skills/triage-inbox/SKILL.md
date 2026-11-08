@@ -12,7 +12,7 @@ Steps:
 1. Read `Assistant preferences` in Drive (tone, signature).
 2. List unread emails from the last 24 hours, or since the last triage if she says so.
 3. Per email: classify, match to a client, apply the `Client/<name>` label, update the case
-   Doc, draft a reply if needed.
+   Doc. If a reply is needed, note a one-line proposal. Don't draft yet.
 4. Never send. Never give product, rate or affordability advice in a draft.
 5. Flag anything that looks like phishing or a change of bank details (see
    `docs/rules/data-protection.md`).
@@ -25,10 +25,13 @@ Finish with this, and nothing longer:
 
 ```
 Done: <n> emails, <n> case files updated.
-Drafts to review: <client - subject>, ...
+Replies to draft? 1) <client>: <one line of what it would say>  2) ...
 Needs you: <decision, or a reviewer issue>, ...
 Possible new clients: <sender>, ...
 Stuck: <client - days since last activity>, ...
 ```
 
 Leave out any line that would be empty.
+
+Then wait. Draft only the replies she approves ("yes", "1 and 3", "yes to all"), with her
+changes. Run `case-reviewer` on the drafts, then say "Drafts ready in Gmail".

@@ -12,12 +12,15 @@
 3. Match it to a client. If the sender matches a client label, apply that label.
    If it's a new person, list it as a possible new client and ask her.
 4. Update the case file (see `../workflow/case-file.md`).
-5. Draft a reply where one is needed.
-6. Finish with a short list: what you did, drafts waiting for her, what needs her decision,
+5. Where a reply is needed, don't draft it yet. List it as a proposal (see below).
+6. Finish with a short list: what you did, replies you propose to draft, what needs her decision,
    and any stuck cases.
 
 ## Drafting replies
 
+- **Confirm first.** Before creating a draft, tell her in one or two lines who it's to and
+  what it would say, then wait. She can say yes, change it, or skip it. "Yes to all" covers
+  every proposal in that list.
 - Drafts only. Never send.
 - Read `Assistant preferences` in her Drive first for tone and signature.
 - Short and friendly. Say what you received and what's still needed, with a list if more
