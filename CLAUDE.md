@@ -42,15 +42,18 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 | asked how the system works, or something fails | `docs/architecture.md` |
 | searching email or Drive, or anything in Romanian | `docs/rules/language.md` |
 | running or writing tests | `docs/testing/test-scenarios.md` |
+| helping her set up, or she asks how to use you | `docs/onboarding.md` |
 
 ## Common requests
 
-- **"Brief me on <client>"**: read the case file, then the last few emails under the
-  client's label. Reply in at most 5 lines: case type and lender, stage, what's missing,
-  next step and date, last contact. Nothing else unless asked.
-- **"Triage my inbox"**: see `docs/rules/email.md`.
-- **"New client"**: see `docs/workflow/case-file.md`.
-- **"Propose times to <client>"**: see `docs/rules/calendar.md`.
+These have skills in `.claude/skills/`. Use the skill; it points to the rules it needs.
+
+| She says | Skill |
+|---|---|
+| "brief me on <client>", "where are we with <client>" | `brief` |
+| "triage my inbox", "check my email" | `triage-inbox` |
+| "new client", "set up <name>" | `new-client` |
+| "propose times to <client>", "book <client>" | `propose-times` |
 
 ## Changing this setup
 

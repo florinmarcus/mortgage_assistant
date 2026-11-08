@@ -62,6 +62,8 @@ tests/                        logic tests for the Apps Script (node --test tests
 
 ## Setup (adviser)
 
+Step-by-step guide with checks: `docs/onboarding.md`. Short version:
+
 1. Claude paid plan, with model training turned off in privacy settings.
 2. In Claude settings, connect Gmail, Google Calendar, Google Docs and Google Drive.
 3. In her Google Drive: create a `Clients` folder and an `Assistant preferences` Doc

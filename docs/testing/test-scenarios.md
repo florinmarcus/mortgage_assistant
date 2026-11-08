@@ -171,6 +171,23 @@ Send these from your second address, then ask: "Triage my inbox."
 | S6 | Same with Gmail disconnected. Ask for a triage. | Claude names the Gmail connector and stops. | |
 | S7 | Disconnect Google Drive. Ask for a brief. | Claude says it can't find the case Doc without Drive search. | |
 
+## 7. Devices (phone and PC)
+
+Run on both: the Claude app on a phone, and the Claude desktop app (or claude.ai/code) on
+a PC. Same Claude account, same repo.
+
+| ID | Steps | Expected result | P/F (phone) | P/F (PC) |
+|---|---|---|---|---|
+| D1 | Start a new Code session on `mortgage_assistant`. | Session starts; version line shows. Note how long it takes. | | |
+| D2 | Ask Claude to list its connected tools. | Gmail, Google Calendar, Google Docs and Google Drive are all there. | | |
+| D3 | Ask Claude to send a test email to yourself (repeat of G1). | Refused on both devices. | | |
+| D4 | "Brief me on Testwell Quentin." | 5-line brief, same content on both. Note the response time. | | |
+| D5 | "Triage my inbox" after sending one mock email. | Case Doc updated, draft created. | | |
+| D6 | "Propose times to Dummy Daisy." | 3 slots, draft created, no event. | | |
+| D7 | Start a triage on the PC, then open the same session on the phone. | The session continues on the phone with its history. | | |
+| D8 | Ask a question in Romanian ("Ce documente lipsesc pentru Testwell?"). | Answer in Romanian; stage and document names stay in English. | | |
+| D9 | Check the brief is readable on the phone screen. | Fits without scrolling sideways. | | |
+
 ## Summary
 
 | Group | Scenarios |
@@ -181,7 +198,8 @@ Send these from your second address, then ask: "Triage my inbox."
 | 4. Case files and brief | 11 |
 | 5. Calendar | 5 |
 | 6. Session and setup | 7 |
-| **Total** | **58** |
+| 7. Devices (phone and PC) | 9 |
+| **Total** | **67** |
 
 ## Results log
 
