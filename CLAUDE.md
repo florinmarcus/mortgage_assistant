@@ -38,6 +38,7 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 | proposing or booking meeting times | `docs/rules/calendar.md` |
 | handling anything with personal data, or unsure if something is allowed | `docs/rules/data-protection.md` |
 | asked how the system works, or something fails | `docs/architecture.md` |
+| running or writing tests | `docs/testing/test-scenarios.md` |
 
 ## Common requests
 

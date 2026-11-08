@@ -69,6 +69,7 @@ templates/case-file.md        case file template
 ## Development
 
 - Never commit client data. Use made-up clients only.
+- Test plan: `docs/testing/test-scenarios.md` (run on a developer account with mock data first).
 - Changes go through pull requests to `main`.
 - After a change to the instructions, the adviser opens a new session to pick it up.
 
