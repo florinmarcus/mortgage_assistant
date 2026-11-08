@@ -23,7 +23,7 @@ Clients/
   `<Surname> <First name> - <Case type> <Year>`.
 - Gmail label: `Client/<Surname> <First name>`. One label per client, shared by all cases.
 - `Incoming/` belongs to the client, not a case, because an email can't always be tied to
-  one case. When you tick a document, move or note it under the right case.
+  one case. When you tick a document, tick it in the right case Doc. Files stay in `Incoming/`.
 
 ## New client
 
