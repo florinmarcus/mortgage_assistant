@@ -134,14 +134,24 @@ test('same file name on the same day gets (2)', () => {
     ['2026-11-08 payslip (2).pdf', '2026-11-08 payslip.pdf']);
 });
 
-test('inline images and small signature logos are skipped', () => {
+test('small signature logos are skipped, inline files are kept', () => {
   const { root, run } = setup([
     label('Client/Testwell Quentin', [[message('2026-11-08T10:00:00Z',
       [attachment('logo.png', 'image/png', 5000), attachment('doc.pdf')],
-      [attachment('inline.png', 'image/png', 300000)])]]),
+      [attachment('inline-logo.png', 'image/png', 3000), attachment('scan.pdf')])]]),
   ]);
   run();
-  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')), ['2026-11-08 doc.pdf']);
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')),
+    ['2026-11-08 doc.pdf', '2026-11-08 scan.pdf']);
+});
+
+test('a PDF sent inline (iPhone Mail) is saved', () => {
+  const { root, run } = setup([
+    label('Client/C001 Testwell Quentin', [[message('2026-11-08T16:41:00Z', [], [attachment('fit-note.pdf')])]]),
+  ]);
+  run();
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/C001 Testwell Quentin/Incoming')),
+    ['2026-11-08 fit-note.pdf']);
 });
 
 test('clients do not mix, and other labels are ignored', () => {

@@ -7,7 +7,8 @@
 - Each email is processed once. New replies in old threads, and emails labelled later,
   are picked up on the next run.
 - Same file name on the same day: the second one gets ` (2)`.
-- Inline images and small images (under 20 KB, usually signature logos) are skipped.
+- Inline attachments are kept (iPhone Mail sends PDFs inline). Small images under 20 KB,
+  usually signature logos, are skipped.
 - Labels deeper than `Client/<name>` are ignored.
 - Each run writes `Apps Script last run: <time> | saved ...` to
   `Mortgage Assistant/Apps Script status.txt`. Claude and the reviewer use it to check the script is running.

@@ -4,7 +4,7 @@
  * Runs in the adviser's own Google account, every 10 minutes.
  * For every Gmail label "Client/<ID> <Surname> <First name>" (e.g. "Client/C001 Smith Anna"):
  *   - makes sure Drive has "Mortgage Assistant/Clients/<ID> <Surname> <First name>/Incoming/"
- *   - saves new attachments from those emails into Incoming/, named
+ *   - saves new attachments (also inline ones, as iPhone Mail sends) into Incoming/, named
  *     "yyyy-MM-dd <original name>"
  *   - remembers each processed message, so nothing is saved twice
  *     (this also works for new replies in an old thread, and for emails labelled later)
@@ -49,7 +49,9 @@ function fileAttachments() {
 
         summary.messages++;
         const datePrefix = Utilities.formatDate(message.getDate(), timeZone, 'yyyy-MM-dd');
-        for (const attachment of message.getAttachments({ includeInlineImages: false })) {
+        // Include inline parts: iPhone Mail sends PDFs and photos inline. Small images
+        // (signature logos) are skipped below.
+        for (const attachment of message.getAttachments({ includeInlineImages: true })) {
           if (isSignatureImage_(attachment)) {
             summary.skipped++;
             continue;
