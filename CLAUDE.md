@@ -47,6 +47,14 @@ it returns, including the `mcp__` prefix (for example `mcp__Google_Drive__search
 Never guess or shorten a tool name. If a connector's tools can't be found, say which
 connector is missing and stop.
 
+## Keep it light
+
+She is on a small plan, so use as few tokens as the task allows.
+- Read emails as plain text, only the unread or new ones.
+- For a brief, read the case Doc and only emails newer than its last log line.
+- Open an attachment's content only when you need to check what it is.
+- Don't read docs from the table below unless the task needs them.
+
 ## Read when needed (don't load everything up front)
 
 | When you are... | Read |

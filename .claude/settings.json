@@ -1,4 +1,5 @@
 {
+  "model": "sonnet",
   "autoCompactWindow": 200000,
   "permissions": {
     "deny": [
