@@ -1,5 +1,7 @@
 # Getting started (for the adviser)
 
+For installation use [`INSTALL.md`](../INSTALL.md). This page is the longer version with tips.
+
 Do this once, ideally with Florin on a call. About an hour.
 Florin tests everything on his own account first (`docs/testing/test-scenarios.md`).
 

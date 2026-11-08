@@ -60,7 +60,8 @@ connector is missing and stop.
 | asked how the system works, or something fails | `docs/architecture.md` |
 | searching email or Drive, or anything in Romanian | `docs/rules/language.md` |
 | running or writing tests | `docs/testing/test-scenarios.md` |
-| helping her set up, or she asks how to use you | `docs/onboarding.md` |
+| helping her set up, or she asks how to use you | `INSTALL.md`, then `docs/onboarding.md` |
+| she asks to set up her Drive | create `Mortgage Assistant/` with `Clients/`, an empty `Client index` and an `Assistant preferences` Doc (see `INSTALL.md` step 4) |
 
 ## Common requests
 
