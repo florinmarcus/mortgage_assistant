@@ -2,6 +2,14 @@
 
 Every step, once, on your own accounts. About 45 minutes. Florin can do it with you on a call.
 
+## Before you start
+
+- A Google account with Gmail, Calendar and Drive (the one you use for clients).
+- A laptop (Mac or Windows) with a browser, and a phone.
+- A card for a paid Claude plan (Pro or Max).
+- A free GitHub account, and Florin's invite accepted.
+- 45 minutes, ideally on a call with Florin.
+
 ## 1. Accounts
 
 1. **Claude:** a paid plan that includes Claude Code (Pro or Max).
