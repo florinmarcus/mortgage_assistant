@@ -17,5 +17,6 @@ Proposing:
 Booking (only after the client confirms and she says yes):
 - Title `<Client name> - <purpose>`. Description: case folder name only.
 - Add a log line to the case Doc.
+- Run the `case-reviewer` agent on the event and the log line.
 
 Moving or cancelling: ask her first, then draft the email offering new times.

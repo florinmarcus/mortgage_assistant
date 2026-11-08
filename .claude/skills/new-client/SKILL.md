@@ -16,5 +16,7 @@ Follow `docs/workflow/case-file.md` (naming and steps) and `templates/case-file.
    (`docs/workflow/document-checklists.md`), first log line.
    If you can't create the Doc, give her the filled text to paste and say why.
 5. Offer to draft a welcome email listing the documents needed. Draft only.
+6. Run the `case-reviewer` agent on what you created (folder, label, case Doc, draft).
+   Fix any issue it reports before replying.
 
 Reply in one or two lines: what you set up and what's next.

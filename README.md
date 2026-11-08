@@ -32,6 +32,8 @@ the source of truth.
 Design choices:
 
 - **Human in the loop.** The assistant drafts; she sends. Sending is blocked.
+- **Independent check.** After every change, a separate small model (Haiku) reads it back:
+  saved, right client, documents match the attachments.
 - **Data stays in her accounts.** This repo holds instructions only. No client data, no keys.
 - **Structured case files** instead of searching email history, so a brief is fast and
   consistent.
@@ -54,6 +56,7 @@ templates/case-file.md        case file template
 apps-script/                  saves email attachments into client folders (runs in her Google account)
 tests/                        logic tests for the Apps Script (node --test tests/apps-script.test.js)
 .claude/skills/               brief, triage-inbox, new-client, propose-times
+.claude/agents/case-reviewer  quick read-only check (Haiku) after every write
 .claude/settings.json         guardrails: sending and trashing email blocked, calendar
                               changes need approval, auto-compact at 200K tokens,
                               version shown at session start

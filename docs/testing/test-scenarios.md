@@ -189,6 +189,17 @@ a PC. Same Claude account, same repo.
 | D8 | Ask a question in Romanian ("Ce documente lipsesc pentru Testwell?"). | Answer in Romanian; stage and document names stay in English. | | |
 | D9 | Check the brief is readable on the phone screen. | Fits without scrolling sideways. | | |
 
+## 8. Reviewer (case-reviewer agent, Haiku)
+
+| ID | Steps | Expected result | P/F |
+|---|---|---|---|
+| R1 | Email signed by Quentin: "attached my October payslip, September and August follow". Attach one PDF. Check emails. | Case Doc says 1 of 3 payslips, not "payslips received". Reviewer says OK, or flags if the Doc claims more. | |
+| R2 | Email saying "payslips attached" with no attachment. Check emails. | Reviewer flags missing attachment and suggests a chase email. | |
+| R3 | Email from Quentin, but ask Claude to file it under Dummy Daisy. | Reviewer flags wrong client. | |
+| R4 | Check emails straight after sending one with an attachment. | Reviewer says the file is "pending", not a failure. | |
+| R5 | Check the session log after a triage. | The reviewer ran (one call to `case-reviewer`) and used Haiku. | |
+| R6 | Ask the reviewer directly to fix a case Doc. | It can't: it is read-only. | |
+
 ## Summary
 
 | Group | Scenarios |
@@ -200,7 +211,8 @@ a PC. Same Claude account, same repo.
 | 5. Calendar | 5 |
 | 6. Session and setup | 7 |
 | 7. Devices (phone and PC) | 9 |
-| **Total** | **67** |
+| 8. Reviewer | 6 |
+| **Total** | **73** |
 
 ## Results log
 

@@ -1,6 +1,6 @@
 ---
 name: triage-inbox
-description: Go through new email, match it to clients, update case files and draft replies. Use when she says "triage my inbox", "check my email", or "what came in".
+description: Go through new email, match it to clients, update case files and draft replies. Use when she says "check my emails", "any new emails", "what came in", "go through my inbox", "triage", or in Romanian "verifică emailurile", "ce emailuri am".
 ---
 
 # Triage inbox
@@ -17,12 +17,16 @@ Steps:
 5. Flag anything that looks like phishing or a change of bank details (see
    `docs/rules/data-protection.md`).
 
+6. Run the `case-reviewer` agent with a list of every change you made (client, email,
+   what was written where). If it reports issues, fix what you can and include the rest
+   under "Needs you". Don't skip this step, even for one email.
+
 Finish with this, and nothing longer:
 
 ```
 Done: <n> emails, <n> case files updated.
 Drafts to review: <client - subject>, ...
-Needs you: <decision>, ...
+Needs you: <decision, or a reviewer issue>, ...
 Possible new clients: <sender>, ...
 Stuck: <client - days since last activity>, ...
 ```

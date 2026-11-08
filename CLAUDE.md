@@ -56,6 +56,13 @@ These have skills in `.claude/skills/`. Use the skill; it points to the rules it
 | "new client", "set up <name>" | `new-client` |
 | "propose times to <client>", "book <client>" | `propose-times` |
 
+## Checking your own work
+
+After any skill that writes something (case Doc, label, folder, draft, calendar event),
+run the `case-reviewer` agent (`.claude/agents/case-reviewer.md`). It is a separate,
+quick, read-only check: was it saved, for the right client, and do the documents match
+the attachments.
+
 ## Changing this setup
 
 The setup is maintained in GitHub by Florin. If she asks to change how you work, make the
