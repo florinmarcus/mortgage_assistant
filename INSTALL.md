@@ -54,7 +54,12 @@ On your laptop, signed in to your Gmail account:
 4. Type: `Which connectors do you have?` → Gmail, Calendar, Drive, Docs.
 5. Do the same version check and `Which connectors do you have?` on your phone.
 
-## 5. Use it
+## 5. Bring in your existing clients
+
+Not ready yet. We'll plan it together once you show Florin how your client files are
+stored today. Draft plan: [docs/workflow/import.md](docs/workflow/import.md).
+
+## 6. Use it
 
 | You want to | Say |
 |---|---|
