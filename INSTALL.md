@@ -7,7 +7,7 @@ Every step, once, on your own accounts. About 45 minutes.
 - A Google account with Gmail, Calendar and Drive (the one you use for clients).
 - A laptop (Mac or Windows) with a browser, and a phone.
 - A card for a paid Claude plan (Pro or Max).
-- A free GitHub account.
+- A free GitHub account, added to the repo by Florin (invite accepted).
 - About 45 minutes.
 
 ## 1. Accounts
@@ -15,7 +15,9 @@ Every step, once, on your own accounts. About 45 minutes.
 1. **Claude:** a paid plan that includes Claude Code (Pro or Max).
    Settings → Privacy → turn off "Help improve Claude".
 2. **Claude app:** install it on your phone and laptop. Sign in on both.
-3. **GitHub:** create a free account at github.com. No invite needed: the repo is public.
+3. **GitHub:** create a free account at github.com and send Florin your username.
+   Accept the invite email. Without it, Claude tries to use a copy (fork) under your own
+   account and the session fails.
 
 ## 2. Connect Claude to your accounts
 
@@ -43,8 +45,7 @@ On your laptop, signed in to your Gmail account:
 
 1. In the Claude app go to **Code**, start a session on the `mortgage_assistant` repo.
    The first line shows `Assistant setup version: ...`.
-   If the repo isn't in the list, send Florin your GitHub username; he adds you and you
-   accept the invite email.
+   Pick `florinmarcus/mortgage_assistant`, not a copy under your own name.
 2. Type: `Set up my Drive for the assistant.`
    Claude creates `Mortgage Assistant` with `Clients`, `Client index` and
    `Assistant preferences`. Open `Assistant preferences` and add your tone, email
