@@ -1,6 +1,6 @@
 # Install
 
-Every step, once, on your own accounts. About 45 minutes. Florin can do it with you on a call.
+Every step, once, on your own accounts. About 45 minutes.
 
 ## Before you start
 
@@ -8,7 +8,7 @@ Every step, once, on your own accounts. About 45 minutes. Florin can do it with 
 - A laptop (Mac or Windows) with a browser, and a phone.
 - A card for a paid Claude plan (Pro or Max).
 - A free GitHub account, and Florin's invite accepted.
-- 45 minutes, ideally on a call with Florin.
+- About 45 minutes.
 
 ## 1. Accounts
 
