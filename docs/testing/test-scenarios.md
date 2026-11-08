@@ -62,12 +62,11 @@ rely on it.
    - Signature: `Test Adviser, Example Mortgages (TEST)`.
    - Working hours: Mon to Fri, 09:30 to 17:00. No calls on Wednesday afternoon.
 3. For each mock client, create a case Doc from `templates/case-file.md`, named as in
-   `docs/workflow/case-file.md`, for example `Clients/Testwell Quentin - Remortgage 2026/`.
+   `docs/workflow/case-file.md`, for example
+   `Clients/Testwell Quentin/Remortgage 2026/Testwell Quentin - Remortgage 2026`.
+   Give one mock client two cases (a mortgage and a protection case) to test that both
+   share one label and one `Incoming/` folder.
    Leave Sample Otto without a case Doc until test C1.
-
-Note: the case folder name (`Testwell Quentin - Remortgage 2026`) and the Apps Script
-folder (`Clients/<label name>/Incoming/`) differ. Check in group 2 where files actually
-land, and note it in the results log if the two need aligning.
 
 ### Connectors
 

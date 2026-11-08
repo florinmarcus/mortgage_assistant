@@ -19,7 +19,8 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 
 ## Where things live
 
-- **Case files:** one Google Doc per client case, in her Drive under `Clients/<Client name>/`.
+- **Case files:** one Google Doc per case, in her Drive under
+  `Clients/<Client name>/<Case type> <Year>/`. A client can have several cases.
   This is the source of truth for stage, documents and history.
 - **Email:** Gmail. Each client has a label `Client/<Client name>`.
 - **Attachments:** saved automatically into `Clients/<Client name>/Incoming/` by the Apps

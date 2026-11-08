@@ -5,13 +5,25 @@ It is the source of truth. Briefs come from it, not from re-reading months of em
 
 ## Naming
 
-- Folder: `Clients/<Surname> <First name> - <Case type> <Year>/`
-  for example `Clients/Smith Anna - Remortgage 2026/`
-- Case Doc: same name, inside the folder.
-- Gmail label: `Client/<Surname> <First name>`.
+One folder per client, one subfolder per case. A client can have several cases, for
+example a remortgage and a protection policy.
 
-One client can have several cases (a mortgage and a protection case). Each case gets its
-own folder and Doc; they share one Gmail label.
+```
+Clients/
+  Smith Anna/                      client folder (same name as the Gmail label)
+    Incoming/                      new attachments, saved by the Apps Script
+    Remortgage 2026/
+      Smith Anna - Remortgage 2026     case Doc
+    Protection 2026/
+      Smith Anna - Protection 2026     case Doc
+```
+
+- Client folder: `Clients/<Surname> <First name>/`
+- Case subfolder: `<Case type> <Year>/`, with the case Doc inside, named
+  `<Surname> <First name> - <Case type> <Year>`.
+- Gmail label: `Client/<Surname> <First name>`. One label per client, shared by all cases.
+- `Incoming/` belongs to the client, not a case, because an email can't always be tied to
+  one case. When you tick a document, move or note it under the right case.
 
 ## New client
 
