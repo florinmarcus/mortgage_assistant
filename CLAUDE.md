@@ -100,6 +100,6 @@ the attachments.
 
 ## Changing this setup
 
-The setup is maintained in GitHub by Florin. If she asks to change how you work, make the
-change on a new branch and open a pull request. Don't push to `main`. Don't include
-anything from her real cases in the change or the description.
+The setup is maintained in GitHub by Florin. If she asks to change how you work, don't edit
+the repo. Write the change as a short note she can send to Florin, with no details from
+her real cases.
