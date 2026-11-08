@@ -56,8 +56,9 @@ rely on it.
 
 ### Drive and preferences
 
-1. In Drive, create a `Clients` folder.
-2. Create a Google Doc called `Assistant preferences` with:
+1. In Drive, create `Mortgage Assistant/Clients/` (ask Claude to do it: this also tests
+   the Drive connector).
+2. Create a Google Doc called `Assistant preferences` inside `Mortgage Assistant/`, with:
    - Tone: friendly, short.
    - Signature: `Test Adviser, Example Mortgages (TEST)`.
    - Working hours: Mon to Fri, 09:30 to 17:00. No calls on Wednesday afternoon.

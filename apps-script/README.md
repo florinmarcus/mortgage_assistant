@@ -2,7 +2,7 @@
 
 `Code.gs` runs in the adviser's own Google account every 10 minutes. For every Gmail label
 `Client/<Surname> <First name>` it saves new attachments into
-`Clients/<Surname> <First name>/Incoming/` in Drive, named `yyyy-MM-dd <file name>`.
+`Mortgage Assistant/Clients/<Surname> <First name>/Incoming/` in Drive, named `yyyy-MM-dd <file name>`.
 
 - Each email is processed once. New replies in old threads, and emails labelled later,
   are picked up on the next run.
@@ -23,7 +23,7 @@
 6. Check **Executions** (left menu) after 10 minutes: each run logs what it saved.
 
 The access asked for is wide (read Gmail, edit Drive). The code only reads emails under
-`Client/...` labels and only writes inside the `Clients` folder.
+`Client/...` labels and only writes inside `Mortgage Assistant/Clients`.
 
 ## Update
 

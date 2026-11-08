@@ -3,7 +3,7 @@
  *
  * Runs in the adviser's own Google account, every 10 minutes.
  * For every Gmail label "Client/<Surname> <First name>":
- *   - makes sure Drive has "Clients/<Surname> <First name>/Incoming/"
+ *   - makes sure Drive has "Mortgage Assistant/Clients/<Surname> <First name>/Incoming/"
  *   - saves new attachments from those emails into Incoming/, named
  *     "yyyy-MM-dd <original name>"
  *   - remembers each processed message, so nothing is saved twice
@@ -13,7 +13,7 @@
  */
 
 const CONFIG = {
-  ROOT_FOLDER: 'Clients',
+  ROOT_PATH: 'Mortgage Assistant/Clients', // inside My Drive
   INCOMING_FOLDER: 'Incoming',
   LABEL_PREFIX: 'Client/',
   THREADS_PER_LABEL: 100,
@@ -26,7 +26,8 @@ function fileAttachments() {
   const started = Date.now();
   const props = PropertiesService.getScriptProperties();
   const timeZone = Session.getScriptTimeZone();
-  const root = getOrCreateFolder_(DriveApp.getRootFolder(), CONFIG.ROOT_FOLDER);
+  const root = CONFIG.ROOT_PATH.split('/')
+    .reduce((parent, name) => getOrCreateFolder_(parent, name), DriveApp.getRootFolder());
   const summary = { saved: 0, skipped: 0, messages: 0 };
 
   const labels = GmailApp.getUserLabels().filter(isClientLabel_);

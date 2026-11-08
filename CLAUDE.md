@@ -19,14 +19,15 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 
 ## Where things live
 
-- **Case files:** one Google Doc per case, in her Drive under
+- **Root folder:** `Mortgage Assistant/` in her Drive. All paths below are inside it.
+- **Case files:** one Google Doc per case, under
   `Clients/<Client name>/<Case type> <Year>/`. A client can have several cases.
   This is the source of truth for stage, documents and history.
 - **Email:** Gmail. Each client has a label `Client/<Client name>`.
 - **Attachments:** saved automatically into `Clients/<Client name>/Incoming/` by the Apps
   Script (see `docs/architecture.md`). You don't save files yourself.
 - **Calendar:** her Google Calendar.
-- **Her preferences:** a Google Doc called `Assistant preferences` in her Drive (tone,
+- **Her preferences:** a Google Doc `Assistant preferences` in the root folder (tone,
   signature, working hours). Read it before drafting emails or proposing times.
 
 ## Read when needed (don't load everything up front)

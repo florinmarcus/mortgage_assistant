@@ -66,7 +66,8 @@ Step-by-step guide with checks: `docs/onboarding.md`. Short version:
 
 1. Claude paid plan, with model training turned off in privacy settings.
 2. In Claude settings, connect Gmail, Google Calendar, Google Docs and Google Drive.
-3. In her Google Drive: create a `Clients` folder and an `Assistant preferences` Doc
+3. In her Google Drive: a `Mortgage Assistant` folder holding a `Clients` folder and an
+   `Assistant preferences` Doc
    (tone, email signature, working hours).
 4. Install the Apps Script: `apps-script/README.md`.
 5. Start a Claude Code session on this repo and ask: "Triage my inbox."

@@ -39,7 +39,8 @@ When she asks to set up a new client:
 
 - Add a log entry for every real event: email in or out, call notes she gives you,
   document received, stage change. Newest entry at the top.
-- When a document arrives, tick it in the documents table with the date.
+- When a document arrives, change its line in Documents, for example
+  `Payslips (3 months): waiting` to `Payslips (3 months): received 8 Nov`.
 - Update the "Next step" and "Next date" lines every time.
 - Keep entries short: `8 Nov: payslip Oct received (email)`.
 - Don't copy email bodies into the case file. Summarise in one line.

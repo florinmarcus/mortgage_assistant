@@ -24,8 +24,10 @@ Also connect GitHub if Claude asks, so it can open the repo.
 
 ## 3. Google Drive
 
-- [ ] Create a folder called `Clients` in My Drive.
-- [ ] Create a Google Doc called `Assistant preferences` with:
+Claude can create these for you in the first session ("set up my Drive folders").
+
+- [ ] A folder `Mortgage Assistant` in My Drive, with a folder `Clients` inside it.
+- [ ] Inside `Mortgage Assistant`, a Google Doc called `Assistant preferences` with:
   - how you like emails to sound (for example: friendly, short)
   - your email signature
   - your working hours and days you don't take calls

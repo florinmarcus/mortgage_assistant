@@ -19,13 +19,12 @@
 
 ## Documents
 
-| Document | Status | Date |
-|---|---|---|
-| Photo ID | waiting | |
-| Proof of address | waiting | |
-| Bank statements (3 months) | waiting | |
+- Photo ID: waiting
+- Proof of address: waiting
+- Bank statements (3 months): waiting
 
-Status is one of: waiting, received, not needed.
+One line per document: `<document>: waiting`, `<document>: received <date>` or
+`<document>: not needed`. A list, not a table, so each line can be updated on its own.
 
 ## Log
 

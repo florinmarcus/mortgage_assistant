@@ -9,7 +9,9 @@
       "mcp__Gmail__send_message",
       "mcp__Gmail__forward",
       "mcp__Gmail__trash_message",
-      "mcp__Gmail__trash_thread"
+      "mcp__Gmail__trash_thread",
+      "mcp__claude_ai_Google_Drive__trash_file",
+      "mcp__Google_Drive__trash_file"
     ],
     "ask": [
       "mcp__claude_ai_Google_Calendar__create_event",
@@ -25,7 +27,10 @@
       {
         "matcher": "startup|resume",
         "hooks": [
-          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/show-version.sh" }
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/show-version.sh"
+          }
         ]
       }
     ]

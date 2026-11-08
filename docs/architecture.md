@@ -33,9 +33,24 @@ stored anywhere.
 - The Apps Script is updated by hand (copy `apps-script/Code.gs` into the script editor).
   Install steps: `apps-script/README.md`.
 
+## What each connector can do (tested 8 Nov 2026)
+
+| Connector | Can | Can't |
+|---|---|---|
+| Google Drive | search; create folders; create Google Docs from Markdown; read Docs, PDFs, Word files and photos; rename and move | edit a Doc's content |
+| Google Docs | read and edit Doc content (replace text, insert lines) | create files |
+| Gmail | search, read, label, draft; see attachment names | save attachments to Drive |
+
+So: Drive creates case files, Docs edits them, the Apps Script saves attachments.
+
+Lessons:
+- Tables in a Markdown-created Doc convert badly and are hard to edit by text. Case files
+  use plain lists.
+- If a connector returns "Forbidden", check its permissions in Claude's connector
+  settings (a tool set to "ask" or a Google permission box left unticked), then start a
+  new session.
+
 ## Known limits
 
-- The Google Docs connector edits existing Docs; it may not create new ones. Until the
-  Apps Script creates case Docs, she creates the Doc from the template.
 - Finding a case Doc needs Drive search (Google Drive connector). Check it is connected.
 - Everything runs in her accounts. If a connector is disconnected, say which one and stop.

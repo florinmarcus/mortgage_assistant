@@ -82,12 +82,12 @@ const names = folder => folder.files.map(f => f.name).sort();
 
 // ---------- tests ----------
 
-test('saves a PDF into Clients/<name>/Incoming with a date prefix', () => {
+test('saves a PDF into Mortgage Assistant/Clients/<name>/Incoming with a date prefix', () => {
   const { root, run } = setup([
     label('Client/Testwell Quentin', [[message('2026-11-08T10:00:00Z', [attachment('payslip-oct.pdf')])]]),
   ]);
   run();
-  assert.deepStrictEqual(names(root.path('Clients/Testwell Quentin/Incoming')), ['2026-11-08 payslip-oct.pdf']);
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')), ['2026-11-08 payslip-oct.pdf']);
 });
 
 test('saves several attachments from one email', () => {
@@ -97,7 +97,7 @@ test('saves several attachments from one email', () => {
     ])]]),
   ]);
   run();
-  assert.strictEqual(root.path('Clients/Dummy Daisy/Incoming').files.length, 3);
+  assert.strictEqual(root.path('Mortgage Assistant/Clients/Dummy Daisy/Incoming').files.length, 3);
 });
 
 test('running twice saves nothing twice', () => {
@@ -106,7 +106,7 @@ test('running twice saves nothing twice', () => {
   ]);
   run();
   run();
-  assert.strictEqual(root.path('Clients/Testwell Quentin/Incoming').files.length, 1);
+  assert.strictEqual(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming').files.length, 1);
 });
 
 test('a new reply in an old thread is picked up on the next run', () => {
@@ -115,7 +115,7 @@ test('a new reply in an old thread is picked up on the next run', () => {
   run();
   thread.push(message('2026-11-08T10:00:00Z', [attachment('b.pdf')]));
   run();
-  assert.deepStrictEqual(names(root.path('Clients/Testwell Quentin/Incoming')),
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')),
     ['2026-11-01 a.pdf', '2026-11-08 b.pdf']);
 });
 
@@ -127,7 +127,7 @@ test('same file name on the same day gets (2)', () => {
     ]]),
   ]);
   run();
-  assert.deepStrictEqual(names(root.path('Clients/Testwell Quentin/Incoming')),
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')),
     ['2026-11-08 payslip (2).pdf', '2026-11-08 payslip.pdf']);
 });
 
@@ -138,7 +138,7 @@ test('inline images and small signature logos are skipped', () => {
       [attachment('inline.png', 'image/png', 300000)])]]),
   ]);
   run();
-  assert.deepStrictEqual(names(root.path('Clients/Testwell Quentin/Incoming')), ['2026-11-08 doc.pdf']);
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')), ['2026-11-08 doc.pdf']);
 });
 
 test('clients do not mix, and other labels are ignored', () => {
@@ -149,9 +149,9 @@ test('clients do not mix, and other labels are ignored', () => {
     label('Client/Sub/Deeper', [[message('2026-11-08T10:00:00Z', [attachment('x.pdf')])]]),
   ]);
   run();
-  assert.deepStrictEqual(names(root.path('Clients/Testwell Quentin/Incoming')), ['2026-11-08 q.pdf']);
-  assert.deepStrictEqual(names(root.path('Clients/Dummy Daisy/Incoming')), ['2026-11-08 d.pdf']);
-  assert.deepStrictEqual(root.path('Clients').folders.map(f => f.name).sort(), ['Dummy Daisy', 'Testwell Quentin']);
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Testwell Quentin/Incoming')), ['2026-11-08 q.pdf']);
+  assert.deepStrictEqual(names(root.path('Mortgage Assistant/Clients/Dummy Daisy/Incoming')), ['2026-11-08 d.pdf']);
+  assert.deepStrictEqual(root.path('Mortgage Assistant/Clients').folders.map(f => f.name).sort(), ['Dummy Daisy', 'Testwell Quentin']);
 });
 
 test('a new label creates the client folder even with no attachments', () => {
@@ -159,16 +159,16 @@ test('a new label creates the client folder even with no attachments', () => {
     label('Client/Sample Otto', [[message('2026-11-08T10:00:00Z', [])]]),
   ]);
   run();
-  assert.ok(root.path('Clients/Sample Otto/Incoming'));
+  assert.ok(root.path('Mortgage Assistant/Clients/Sample Otto/Incoming'));
 });
 
 test('existing folders are reused, not duplicated', () => {
   const { root, run } = setup([
     label('Client/Testwell Quentin', [[message('2026-11-08T10:00:00Z', [attachment('a.pdf')])]]),
   ]);
-  root.createFolder('Clients').createFolder('Testwell Quentin').createFolder('Remortgage 2026');
+  root.createFolder('Mortgage Assistant').createFolder('Clients').createFolder('Testwell Quentin').createFolder('Remortgage 2026');
   run();
-  assert.strictEqual(root.folders.filter(f => f.name === 'Clients').length, 1);
-  const client = root.path('Clients/Testwell Quentin');
+  assert.strictEqual(root.path('Mortgage Assistant').folders.filter(f => f.name === 'Clients').length, 1);
+  const client = root.path('Mortgage Assistant/Clients/Testwell Quentin');
   assert.deepStrictEqual(client.folders.map(f => f.name).sort(), ['Incoming', 'Remortgage 2026']);
 });
