@@ -1,8 +1,8 @@
 # Apps Script: save attachments to Drive
 
 `Code.gs` runs in the adviser's own Google account every 10 minutes. For every Gmail label
-`Client/<Surname> <First name>` it saves new attachments into
-`Mortgage Assistant/Clients/<Surname> <First name>/Incoming/` in Drive, named `yyyy-MM-dd <file name>`.
+`Client/<ID> <Surname> <First name>` (for example `Client/C001 Smith Anna`) it saves new attachments into
+`Mortgage Assistant/Clients/<ID> <Surname> <First name>/Incoming/` in Drive, named `yyyy-MM-dd <file name>`.
 
 - Each email is processed once. New replies in old threads, and emails labelled later,
   are picked up on the next run.

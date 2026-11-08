@@ -7,8 +7,8 @@ description: Give a short brief on a client case, for example while the client i
 
 Speed matters more than detail. She may be on a call.
 
-1. Find the client's folder in Drive (`Clients/<Surname> <First name>/`) and the case Doc
-   in each case subfolder.
+1. Look the client up in the `Client index` (by name, email or phone) to get the ID, then
+   open `Clients/<ID> .../` and the case Doc in each case subfolder.
    If there are several cases, brief the active one and mention the others in one line.
    If you can't find the client, say so at once and ask for the spelling.
 2. Read the case Doc: Summary, Documents, top of the Log.
@@ -20,7 +20,7 @@ Speed matters more than detail. She may be on a call.
 Missing: <documents, or "nothing">.
 Next: <next step> by <date>.
 Last contact: <date>, <one-word channel>.
-<only if relevant: new email not yet logged / case stuck>
+<only if relevant: new email not yet logged / case stuck / slots on hold>
 ```
 
 Rules:

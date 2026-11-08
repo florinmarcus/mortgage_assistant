@@ -1,4 +1,4 @@
-# <Surname> <First name> - <Case type> <Year>
+# <ID> <Surname> <First name> - <Case type> <Year>
 
 ## Summary
 
@@ -11,11 +11,12 @@
 
 ## Client
 
+- **Client ID:** <ID>
 - **Name(s):**
 - **Email:**
 - **Phone:**
 - **Employment:** Employed / Self-employed
-- **Gmail label:** Client/<Surname> <First name>
+- **Gmail label:** Client/<ID> <Surname> <First name>
 
 ## Documents
 

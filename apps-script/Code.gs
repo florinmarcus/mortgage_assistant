@@ -2,8 +2,8 @@
  * Mortgage assistant: save email attachments into client folders in Google Drive.
  *
  * Runs in the adviser's own Google account, every 10 minutes.
- * For every Gmail label "Client/<Surname> <First name>":
- *   - makes sure Drive has "Mortgage Assistant/Clients/<Surname> <First name>/Incoming/"
+ * For every Gmail label "Client/<ID> <Surname> <First name>" (e.g. "Client/C001 Smith Anna"):
+ *   - makes sure Drive has "Mortgage Assistant/Clients/<ID> <Surname> <First name>/Incoming/"
  *   - saves new attachments from those emails into Incoming/, named
  *     "yyyy-MM-dd <original name>"
  *   - remembers each processed message, so nothing is saved twice
@@ -64,7 +64,7 @@ function fileAttachments() {
   return summary;
 }
 
-/** Only labels like "Client/Smith Anna". Not "Client" itself, not deeper levels. */
+/** Only labels like "Client/C001 Smith Anna". Not "Client" itself, not deeper levels. */
 function isClientLabel_(label) {
   const name = label.getName();
   if (!name.startsWith(CONFIG.LABEL_PREFIX)) return false;

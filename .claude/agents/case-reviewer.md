@@ -25,12 +25,14 @@ written (case Doc, label, draft, folder, calendar event).
    - fewer documents than claimed (for example "payslips" but one file, or 1 of 3 months)
    - a document marked received with no matching attachment
    - an attachment nobody recorded
-4. **Files in Drive.** The attachments are in `Mortgage Assistant/Clients/<client>/Incoming/`.
+4. **Files in Drive.** The attachments are in `Mortgage Assistant/Clients/<ID> <client>/Incoming/`.
    If they're not there yet and the email is less than 15 minutes old, write "pending"
    (the Apps Script runs every 10 minutes), not a failure.
 5. **Case Doc is consistent.** Stage, next step and the document list agree with the latest
    log line. Dates in the format "8 Nov".
-6. **Drafts.** The draft goes to the right person, follows the rules (no product, rate or
+6. **IDs and holds.** The client ID in the folder, label, case Doc and index line is the
+   same. Holds are titled `HOLD <ID> - ...`, have no names, and don't overlap other events.
+7. **Drafts.** The draft goes to the right person, follows the rules (no product, rate or
    affordability advice, no other client's details) and asks for anything still missing.
 
 ## Report

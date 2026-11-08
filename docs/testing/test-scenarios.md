@@ -21,8 +21,8 @@ add a line to the results log at the end.
 
 | Client | Gmail label | Case | Employment |
 |---|---|---|---|
-| Testwell Quentin | `Client/Testwell Quentin` | Remortgage 2026 | Employed |
-| Dummy Daisy | `Client/Dummy Daisy` | Purchase 2026 | Self-employed |
+| Testwell Quentin | `Client/C001 Testwell Quentin` | Remortgage 2026 | Employed |
+| Dummy Daisy | `Client/C002 Dummy Daisy` | Purchase 2026 | Self-employed |
 | Sample Otto | `Client/Sample Otto` | Protection 2026 | Employed |
 
 Daisy's purchase case and Otto's protection case are not linked. Keep it that way so you
@@ -64,7 +64,7 @@ rely on it.
    - Working hours: Mon to Fri, 09:30 to 17:00. No calls on Wednesday afternoon.
 3. For each mock client, create a case Doc from `templates/case-file.md`, named as in
    `docs/workflow/case-file.md`, for example
-   `Clients/Testwell Quentin/Remortgage 2026/Testwell Quentin - Remortgage 2026`.
+   `Clients/C001 Testwell Quentin/Remortgage 2026/Testwell Quentin - Remortgage 2026`.
    Give one mock client two cases (a mortgage and a protection case) to test that both
    share one label and one `Incoming/` folder.
    Leave Sample Otto without a case Doc until test C1.
@@ -100,7 +100,7 @@ script editor.
 
 | ID | Steps | Expected result | P/F |
 |---|---|---|---|
-| A1 | Email yourself `payslip-oct.pdf`. Label it `Client/Testwell Quentin`. | File saved in `Clients/Testwell Quentin/Incoming/` as `yyyy-MM-dd payslip-oct.pdf` with today's date. | |
+| A1 | Email yourself `payslip-oct.pdf`. Label it `Client/C001 Testwell Quentin`. | File saved in `Clients/C001 Testwell Quentin/Incoming/` as `yyyy-MM-dd payslip-oct.pdf` with today's date. | |
 | A2 | One email with `payslip-sep.pdf`, `bank-statement.pdf` and `passport.jpg`. Label for Quentin. | All three saved, each with the date prefix. | |
 | A3 | From your phone, email `passport.jpg` and `passport.heic` as attachments. Label for Daisy. | Both saved. HEIC file kept as HEIC, not broken. | |
 | A4 | Email `sa302.docx` and `accounts.xlsx`. Label for Daisy. | Both saved, open correctly in Drive. | |
@@ -125,7 +125,7 @@ Send these from your second address, then ask: "Triage my inbox."
 | ID | Steps | Expected result | P/F |
 |---|---|---|---|
 | T1 | New sender: "Hi, I'm looking to remortgage next year, can we talk?" | Listed as a possible new client. Claude asks before labelling or creating anything. | |
-| T2 | From Quentin's address: "Attached my October payslip" with `payslip-oct.pdf`. | Labelled `Client/Testwell Quentin`. Case Doc: payslip ticked with date, log line added. Draft reply made, not sent. | |
+| T2 | From Quentin's address: "Attached my October payslip" with `payslip-oct.pdf`. | Labelled `Client/C001 Testwell Quentin`. Case Doc: payslip ticked with date, log line added. Draft reply made, not sent. | |
 | T3 | From a made-up lender name: "Valuation booked for 14 Nov for Testwell Quentin." | Treated as a lender update. Case Doc log updated. Stage only moves forward one step if it fits `case-stages.md`. | |
 | T4 | From Daisy: "Can we meet next week?" | Treated as a meeting request. Draft with 3 slots (see group 5). No event created. | |
 | T5 | Any newsletter or marketing email in your inbox. | Skipped. Not listed in the summary. | |
@@ -200,6 +200,19 @@ a PC. Same Claude account, same repo.
 | R5 | Check the session log after a triage. | The reviewer ran (one call to `case-reviewer`) and used Haiku. | |
 | R6 | Ask the reviewer directly to fix a case Doc. | It can't: it is read-only. | |
 
+## 9. Client IDs and calendar holds
+
+| ID | Steps | Expected result | P/F |
+|---|---|---|---|
+| H1 | "New client: Sample Otto, protection." | Next ID added to `Client index` first; folder, label and case Doc all use the same ID. | |
+| H2 | Set up two clients one after the other. | IDs follow on (C002, C003); none reused. | |
+| H3 | "Brief me on" a client using their email address or phone instead of the name. | Found through the index. | |
+| H4 | "Propose times to Testwell Quentin." Approve the slots. | 3 `HOLD C00x - <purpose>` events, shown as busy, no names; draft created; log line added. | |
+| H5 | In a second session, "Propose times to Dummy Daisy" for the same week. | None of Daisy's slots overlap Quentin's holds. | |
+| H6 | Reply as Quentin picking the second slot. Check emails, approve booking. | That hold becomes `C00x Testwell Quentin - <purpose>`; the other 2 holds deleted. | |
+| H7 | Leave Daisy's holds unanswered, then check emails with the date 4 working days later (or edit the hold description date). | Triage lists them under "Old holds" and asks; nothing deleted without a yes. | |
+| H8 | Reply as Daisy: "none of these work". | Claude asks before deleting the holds and offers new times. | |
+
 ## Summary
 
 | Group | Scenarios |
@@ -212,7 +225,8 @@ a PC. Same Claude account, same repo.
 | 6. Session and setup | 7 |
 | 7. Devices (phone and PC) | 9 |
 | 8. Reviewer | 6 |
-| **Total** | **73** |
+| 9. Client IDs and holds | 8 |
+| **Total** | **81** |
 
 ## Results log
 

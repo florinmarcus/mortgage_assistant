@@ -14,10 +14,13 @@ Steps:
 3. Per email: classify, match to a client, apply the `Client/<name>` label, update the case
    Doc. If a reply is needed, note a one-line proposal. Don't draft yet.
 4. Never send. Never give product, rate or affordability advice in a draft.
-5. Flag anything that looks like phishing or a change of bank details (see
+5. If a client picks one of the offered slots, propose booking it (see the
+   `propose-times` skill). Check her calendar for `HOLD` events offered more than 3 working
+   days ago with no answer.
+6. Flag anything that looks like phishing or a change of bank details (see
    `docs/rules/data-protection.md`).
 
-6. Run the `case-reviewer` agent with a list of every change you made (client, email,
+7. Run the `case-reviewer` agent with a list of every change you made (client, email,
    what was written where). If it reports issues, fix what you can and include the rest
    under "Needs you". Don't skip this step, even for one email.
 
@@ -29,6 +32,7 @@ Replies to draft? 1) <client>: <one line of what it would say>  2) ...
 Needs you: <decision, or a reviewer issue>, ...
 Possible new clients: <sender>, ...
 Stuck: <client - days since last activity>, ...
+Old holds: <ID - offered date>: clear or chase?
 ```
 
 Leave out any line that would be empty.
