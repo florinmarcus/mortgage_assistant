@@ -59,6 +59,17 @@ On your laptop, signed in to your Gmail account:
 5. Type: `Which connectors do you have?` → Gmail, Calendar, Drive, Docs.
 6. Do the same version check and `Which connectors do you have?` on your phone.
 
+### No GitHub access? (laptop only)
+
+If your GitHub account isn't working yet, run it locally:
+1. Open `https://github.com/florinmarcus/mortgage_assistant` → green **Code** → **Download ZIP**.
+   Unzip it, for example to `Documents\mortgage_assistant`.
+2. Claude desktop app → **Code** → choose that local folder.
+3. Continue from step 2 above. The version line may be blank: that's fine.
+4. When Florin updates the setup, download the ZIP again and replace the folder.
+
+This works on the laptop only, not the phone.
+
 ## 5. Bring in your existing clients
 
 Not ready yet. We'll plan it together once you show Florin how your client files are
