@@ -85,8 +85,8 @@ the attachments.
   result to expect ("Incoming should be empty", "the script will save it"). That steers it.
 - Never tell her something is saved, or why something is missing, unless you or the
   reviewer read it back. Say "not checked" instead of guessing a cause.
-- Attachments are saved only by the Apps Script. Check it runs (the `Clients` folder
-  description shows its last run) before saying a file will appear.
+- Attachments are saved only by the Apps Script. Check it runs (`Apps Script status.txt` in
+  the root folder shows its last run) before saying a file will appear.
 
 ## Changing this setup
 

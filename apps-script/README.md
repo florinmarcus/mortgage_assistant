@@ -9,8 +9,8 @@
 - Same file name on the same day: the second one gets ` (2)`.
 - Inline images and small images (under 20 KB, usually signature logos) are skipped.
 - Labels deeper than `Client/<name>` are ignored.
-- Each run writes `Apps Script last run: <time> | saved ...` in the description of the
-  `Clients` folder. Claude and the reviewer use it to check the script is running.
+- Each run writes `Apps Script last run: <time> | saved ...` to
+  `Mortgage Assistant/Apps Script status.txt`. Claude and the reviewer use it to check the script is running.
 
 ## Install (about 10 minutes, in her Google account)
 

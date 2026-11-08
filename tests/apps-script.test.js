@@ -14,13 +14,15 @@ const CODE = fs.readFileSync(path.join(__dirname, '..', 'apps-script', 'Code.gs'
 // ---------- fakes ----------
 
 class FakeFolder {
-  constructor(name) { this.name = name; this.folders = []; this.files = []; this.description = ''; }
-  setDescription(d) { this.description = d; return this; }
+  constructor(name, parent) { this.name = name; this.parent = parent; this.folders = []; this.files = []; }
+  getParents() { return iter(this.parent ? [this.parent] : []); }
   getFoldersByName(n) { return iter(this.folders.filter(f => f.name === n)); }
   getFilesByName(n) { return iter(this.files.filter(f => f.name === n)); }
-  createFolder(n) { const f = new FakeFolder(n); this.folders.push(f); return f; }
-  createFile(blob) {
-    const file = { name: blob.name, setName(n) { this.name = n; return this; } };
+  createFolder(n) { const f = new FakeFolder(n, this); this.folders.push(f); return f; }
+  createFile(blob, content) {
+    if (typeof blob === 'string') blob = { name: blob, content };
+    const file = { name: blob.name, content: blob.content,
+      setName(n) { this.name = n; return this; }, setContent(c) { this.content = c; return this; } };
     this.files.push(file);
     return file;
   }
@@ -179,7 +181,11 @@ test('each run writes a heartbeat on the Clients folder', () => {
     label('Client/C001 Testwell Quentin', [[message('2026-11-08T10:00:00Z', [attachment('a.pdf')])]]),
   ]);
   run();
-  const d = root.path('Mortgage Assistant/Clients').description;
-  assert.match(d, /^Apps Script last run: \d{4}-\d{2}-\d{2}/);
-  assert.match(d, /saved 1 file\(s\) from 1 new email\(s\)/);
+  const status = () => root.path('Mortgage Assistant').files.filter(f => f.name === 'Apps Script status.txt');
+  assert.strictEqual(status().length, 1);
+  assert.match(status()[0].content, /^Apps Script last run: \d{4}-\d{2}-\d{2}/);
+  assert.match(status()[0].content, /saved 1 file\(s\) from 1 new email\(s\)/);
+  run();
+  assert.strictEqual(status().length, 1, 'status file is updated, not duplicated');
+  assert.match(status()[0].content, /saved 0 file\(s\) from 0 new email\(s\)/);
 });

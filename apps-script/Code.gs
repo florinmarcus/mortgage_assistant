@@ -15,6 +15,7 @@
 const CONFIG = {
   ROOT_PATH: 'Mortgage Assistant/Clients', // inside My Drive
   INCOMING_FOLDER: 'Incoming',
+  STATUS_FILE: 'Apps Script status.txt', // next to the Clients folder
   LABEL_PREFIX: 'Client/',
   THREADS_PER_LABEL: 100,
   MAX_RUN_MS: 4.5 * 60 * 1000, // stop early, Apps Script limit is 6 minutes
@@ -67,13 +68,18 @@ function fileAttachments() {
 }
 
 /**
- * Proof that the script runs: the Clients folder's description shows the last run.
- * Claude reads it to tell "not saved yet" from "the script isn't running".
+ * Proof that the script runs: a text file "Apps Script status.txt" next to the Clients
+ * folder shows the last run. Claude reads it to tell "not saved yet" from "the script
+ * isn't running". (The Drive connector can't read folder descriptions.)
  */
-function writeHeartbeat_(root, summary, timeZone) {
+function writeHeartbeat_(clientsFolder, summary, timeZone) {
   const when = Utilities.formatDate(new Date(), timeZone, "yyyy-MM-dd'T'HH:mm:ssXXX");
-  root.setDescription('Apps Script last run: ' + when + ' | saved ' + summary.saved +
-    ' file(s) from ' + summary.messages + ' new email(s)');
+  const text = 'Apps Script last run: ' + when + ' | saved ' + summary.saved +
+    ' file(s) from ' + summary.messages + ' new email(s)';
+  const parent = clientsFolder.getParents().next();
+  const found = parent.getFilesByName(CONFIG.STATUS_FILE);
+  if (found.hasNext()) found.next().setContent(text);
+  else parent.createFile(CONFIG.STATUS_FILE, text, 'text/plain');
 }
 
 /** Only labels like "Client/C001 Smith Anna". Not "Client" itself, not deeper levels. */

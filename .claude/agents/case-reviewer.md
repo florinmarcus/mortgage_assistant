@@ -36,9 +36,9 @@ written (case Doc, label, draft, folder, calendar event).
    - an attachment nobody recorded
 4. **Files in Drive.** Every attachment must be in
    `Mortgage Assistant/Clients/<ID> <client>/Incoming/`.
-   - First read the description of the `Mortgage Assistant/Clients` folder. The Apps
+   - First read the text file `Mortgage Assistant/Apps Script status.txt`. The Apps
      Script writes `Apps Script last run: <time>` there on every run.
-   - No such line, or last run more than 20 minutes ago: ISSUE "Apps Script is not
+   - No such file, or last run more than 20 minutes ago: ISSUE "Apps Script is not
      running; attachments are not being saved".
    - Script ran after the email arrived, but the file is missing: ISSUE (label missing on
      that thread, or script error).
