@@ -17,7 +17,10 @@
 
 1. Signed in as her, open https://script.google.com and click **New project**.
    Name it `Mortgage assistant attachments`.
-2. Replace the contents of `Code.gs` with `apps-script/Code.gs` from this repo.
+2. Replace the contents of `Code.gs` with `apps-script/Code.gs` from this repo. Copy it as
+   plain text from a commit-pinned link:
+   `https://raw.githubusercontent.com/florinmarcus/mortgage_assistant/<commit>/apps-script/Code.gs`.
+   The `main` link is cached for a few minutes after a change and can show the old code.
 3. Project settings (gear icon): set the time zone to London.
 4. Select `fileAttachments` and click **Run**. Google asks for access to Gmail and Drive.
    It's her own script, so Google shows "unverified app": click **Advanced**, then
@@ -30,8 +33,8 @@ The access asked for is wide (read Gmail, edit Drive). The code only reads email
 
 ## Update
 
-When `Code.gs` changes in GitHub: open the script, paste the new version, save. The timer
-keeps running; no need to reinstall.
+When `Code.gs` changes in GitHub: open the script, paste the new version (commit-pinned link,
+see step 2), save. The timer keeps running; no need to reinstall.
 
 ## Stop
 

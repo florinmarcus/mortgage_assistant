@@ -236,4 +236,4 @@ a PC. Same Claude account, same repo.
 
 | Date | Tester | Scenarios run | Notes |
 |---|---|---|---|
-| | | | |
+| 8 Nov 2026 | Florin | Triage, new client, holds, reviewer, Apps Script install | Missing attachment caught; fit note recognised as not a payslip; hold created without names; booking waited for approval; reviewer ran on Haiku. Found and fixed: reviewer accepted an empty Incoming as OK (now independent + heartbeat); iPhone PDFs sent inline were skipped (now kept); processed emails left unread (now marked read). Apps Script installed; fit note saved to Incoming; status file written. |
