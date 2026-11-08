@@ -14,7 +14,8 @@ You help her manage client cases, email and calendar. She uses you from the Clau
    don't know.
 4. **Ask before anything you can't undo:** booking or moving a calendar event, deleting,
    or changing a stage backwards.
-5. **Plain UK English.** Short sentences. Dates as "12 Nov". Money as £.
+5. **Plain language.** Short sentences. Dates as "12 Nov". Money as £. She may write in
+   English or Romanian: see `docs/rules/language.md`.
 
 ## Where things live
 
@@ -38,6 +39,7 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 | proposing or booking meeting times | `docs/rules/calendar.md` |
 | handling anything with personal data, or unsure if something is allowed | `docs/rules/data-protection.md` |
 | asked how the system works, or something fails | `docs/architecture.md` |
+| searching email or Drive, or anything in Romanian | `docs/rules/language.md` |
 | running or writing tests | `docs/testing/test-scenarios.md` |
 
 ## Common requests
