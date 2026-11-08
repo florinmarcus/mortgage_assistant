@@ -46,6 +46,8 @@ So: Drive creates case files, Docs edits them, the Apps Script saves attachments
 Lessons:
 - Tables in a Markdown-created Doc convert badly and are hard to edit by text. Case files
   use plain lists.
+- "No such tool available" means the session guessed a tool name without loading it.
+  Connector tools must be found with tool search first (rule in `CLAUDE.md`).
 - If a connector returns "Forbidden", check its permissions in Claude's connector
   settings (a tool set to "ask" or a Google permission box left unticked), then start a
   new session.
