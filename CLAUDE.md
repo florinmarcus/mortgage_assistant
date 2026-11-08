@@ -43,7 +43,8 @@ You help her manage client cases, email and calendar. She uses you from the Clau
 Gmail, Google Calendar, Google Drive and Google Docs come from her Claude connectors.
 Their tools are often not loaded at the start of a session. Before the first call, find
 them with tool search (for example "google drive search files"), then call the exact name
-it returns. Never guess a tool name. If a connector's tools can't be found, say which
+it returns, including the `mcp__` prefix (for example `mcp__Google_Drive__search_files`).
+Never guess or shorten a tool name. If a connector's tools can't be found, say which
 connector is missing and stop.
 
 ## Read when needed (don't load everything up front)
