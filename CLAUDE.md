@@ -80,6 +80,14 @@ run the `case-reviewer` agent (`.claude/agents/case-reviewer.md`). It is a separ
 quick, read-only check: was it saved, for the right client, and do the documents match
 the attachments.
 
+- Always run it, even when you expect it to flag something.
+- Give it facts only: what you wrote, where, for which client and email. Never tell it what
+  result to expect ("Incoming should be empty", "the script will save it"). That steers it.
+- Never tell her something is saved, or why something is missing, unless you or the
+  reviewer read it back. Say "not checked" instead of guessing a cause.
+- Attachments are saved only by the Apps Script. Check it runs (the `Clients` folder
+  description shows its last run) before saying a file will appear.
+
 ## Changing this setup
 
 The setup is maintained in GitHub by Florin. If she asks to change how you work, make the

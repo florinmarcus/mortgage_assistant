@@ -40,6 +40,7 @@ function fileAttachments() {
       for (const message of thread.getMessages()) {
         if (Date.now() - started > CONFIG.MAX_RUN_MS) {
           console.log('Stopping early, will continue next run. ' + JSON.stringify(summary));
+          writeHeartbeat_(root, summary, timeZone);
           return summary;
         }
         const key = 'done_' + message.getId();
@@ -60,8 +61,19 @@ function fileAttachments() {
       }
     }
   }
+  writeHeartbeat_(root, summary, timeZone);
   console.log('Done. ' + JSON.stringify(summary));
   return summary;
+}
+
+/**
+ * Proof that the script runs: the Clients folder's description shows the last run.
+ * Claude reads it to tell "not saved yet" from "the script isn't running".
+ */
+function writeHeartbeat_(root, summary, timeZone) {
+  const when = Utilities.formatDate(new Date(), timeZone, "yyyy-MM-dd'T'HH:mm:ssXXX");
+  root.setDescription('Apps Script last run: ' + when + ' | saved ' + summary.saved +
+    ' file(s) from ' + summary.messages + ' new email(s)');
 }
 
 /** Only labels like "Client/C001 Smith Anna". Not "Client" itself, not deeper levels. */

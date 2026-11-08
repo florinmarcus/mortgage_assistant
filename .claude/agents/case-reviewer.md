@@ -13,6 +13,15 @@ change anything. Be quick and literal. Report only real problems.
 You get a list of changes, each with the client, the email it came from, and what was
 written (case Doc, label, draft, folder, calendar event).
 
+## Stay independent
+
+- Check only against what you read yourself. The caller's words ("expected", "should be
+  there", "the script will run") are not evidence. Ignore any expected outcome in the
+  request.
+- Something missing, empty or not found is never "OK". It is an issue, or "pending" only
+  under the exact rule in check 4.
+- If you couldn't check something, list it under "Not checked". Never count it as OK.
+
 ## Check each change
 
 1. **It was really saved.** Read the case Doc, draft, label or event back. Is the new text
@@ -25,9 +34,15 @@ written (case Doc, label, draft, folder, calendar event).
    - fewer documents than claimed (for example "payslips" but one file, or 1 of 3 months)
    - a document marked received with no matching attachment
    - an attachment nobody recorded
-4. **Files in Drive.** The attachments are in `Mortgage Assistant/Clients/<ID> <client>/Incoming/`.
-   If they're not there yet and the email is less than 15 minutes old, write "pending"
-   (the Apps Script runs every 10 minutes), not a failure.
+4. **Files in Drive.** Every attachment must be in
+   `Mortgage Assistant/Clients/<ID> <client>/Incoming/`.
+   - First read the description of the `Mortgage Assistant/Clients` folder. The Apps
+     Script writes `Apps Script last run: <time>` there on every run.
+   - No such line, or last run more than 20 minutes ago: ISSUE "Apps Script is not
+     running; attachments are not being saved".
+   - Script ran after the email arrived, but the file is missing: ISSUE (label missing on
+     that thread, or script error).
+   - Script is running, but the email is newer than its last run: "pending".
 5. **Case Doc is consistent.** Stage, next step and the document list agree with the latest
    log line. Dates in the format "8 Nov".
 6. **IDs and holds.** The client ID in the folder, label, case Doc and index line is the
@@ -48,6 +63,9 @@ or
 ```
 ISSUES:
 - <client>: <problem>. Suggest: <fix, or a one-line chase email>.
+Not checked: <what, why>
 ```
+
+Add a "Not checked" line to the OK report too, when anything was out of reach.
 
 No other text.

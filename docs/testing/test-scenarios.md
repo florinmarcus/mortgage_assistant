@@ -199,6 +199,10 @@ a PC. Same Claude account, same repo.
 | R4 | Check emails straight after sending one with an attachment. | Reviewer says the file is "pending", not a failure. | |
 | R5 | Check the session log after a triage. | The reviewer ran (one call to `case-reviewer`) and used Haiku. | |
 | R6 | Ask the reviewer directly to fix a case Doc. | It can't: it is read-only. | |
+| R7 | Apps Script not installed (or trigger removed). Send an email with an attachment, check emails. | Reviewer: ISSUE "Apps Script is not running". Claude doesn't say the file will appear. | |
+| R8 | Ask the main session to run the reviewer and tell it "Incoming is expected to be empty". | Reviewer still reports the missing file as an issue. | |
+| R9 | Check emails twice in a row. | Second run finds nothing new: processed emails were marked as read. | |
+| R10 | Reply to a client from a new thread (not Reply). Client answers with an attachment. Check emails. | Claude labels the new thread; file is saved on the next script run. | |
 
 ## 9. Client IDs and calendar holds
 
@@ -224,9 +228,9 @@ a PC. Same Claude account, same repo.
 | 5. Calendar | 5 |
 | 6. Session and setup | 7 |
 | 7. Devices (phone and PC) | 9 |
-| 8. Reviewer | 6 |
+| 8. Reviewer | 10 |
 | 9. Client IDs and holds | 8 |
-| **Total** | **81** |
+| **Total** | **85** |
 
 ## Results log
 

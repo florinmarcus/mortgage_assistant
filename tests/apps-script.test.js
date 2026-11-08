@@ -14,7 +14,8 @@ const CODE = fs.readFileSync(path.join(__dirname, '..', 'apps-script', 'Code.gs'
 // ---------- fakes ----------
 
 class FakeFolder {
-  constructor(name) { this.name = name; this.folders = []; this.files = []; }
+  constructor(name) { this.name = name; this.folders = []; this.files = []; this.description = ''; }
+  setDescription(d) { this.description = d; return this; }
   getFoldersByName(n) { return iter(this.folders.filter(f => f.name === n)); }
   getFilesByName(n) { return iter(this.files.filter(f => f.name === n)); }
   createFolder(n) { const f = new FakeFolder(n); this.folders.push(f); return f; }
@@ -171,4 +172,14 @@ test('existing folders are reused, not duplicated', () => {
   assert.strictEqual(root.path('Mortgage Assistant').folders.filter(f => f.name === 'Clients').length, 1);
   const client = root.path('Mortgage Assistant/Clients/Testwell Quentin');
   assert.deepStrictEqual(client.folders.map(f => f.name).sort(), ['Incoming', 'Remortgage 2026']);
+});
+
+test('each run writes a heartbeat on the Clients folder', () => {
+  const { root, run } = setup([
+    label('Client/C001 Testwell Quentin', [[message('2026-11-08T10:00:00Z', [attachment('a.pdf')])]]),
+  ]);
+  run();
+  const d = root.path('Mortgage Assistant/Clients').description;
+  assert.match(d, /^Apps Script last run: \d{4}-\d{2}-\d{2}/);
+  assert.match(d, /saved 1 file\(s\) from 1 new email\(s\)/);
 });

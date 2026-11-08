@@ -11,7 +11,7 @@
    - other (newsletters, marketing: skip, don't list)
 3. Match it to a client. If the sender matches a client label, apply that label.
    If it's a new person, list it as a possible new client and ask her.
-4. Update the case file (see `../workflow/case-file.md`).
+4. Update the case file (see `../workflow/case-file.md`). Then mark the email as read.
 5. Where a reply is needed, don't draft it yet. List it as a proposal (see below).
 6. Finish with a short list: what you did, replies you propose to draft, what needs her decision,
    and any stuck cases.
