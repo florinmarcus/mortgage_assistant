@@ -30,7 +30,8 @@ stored anywhere.
 
 - New sessions clone this repo, so they always start with the latest `main`.
 - When the setup changes, Florin tells her to open a new session.
-- The Apps Script is updated by hand (copy from `apps-script/` into the script editor).
+- The Apps Script is updated by hand (copy `apps-script/Code.gs` into the script editor).
+  Install steps: `apps-script/README.md`.
 
 ## Known limits
 

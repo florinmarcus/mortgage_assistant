@@ -51,6 +51,9 @@ docs/
   rules/calendar.md           proposing and booking times
   rules/data-protection.md    UK GDPR and FCA boundaries
 templates/case-file.md        case file template
+apps-script/                  saves email attachments into client folders (runs in her Google account)
+tests/                        logic tests for the Apps Script (node --test tests/apps-script.test.js)
+.claude/skills/               brief, triage-inbox, new-client, propose-times
 .claude/settings.json         guardrails: sending and trashing email blocked, calendar
                               changes need approval, auto-compact at 200K tokens,
                               version shown at session start
@@ -63,7 +66,7 @@ templates/case-file.md        case file template
 2. In Claude settings, connect Gmail, Google Calendar, Google Docs and Google Drive.
 3. In her Google Drive: create a `Clients` folder and an `Assistant preferences` Doc
    (tone, email signature, working hours).
-4. Install the Apps Script (coming in `apps-script/`).
+4. Install the Apps Script: `apps-script/README.md`.
 5. Start a Claude Code session on this repo and ask: "Triage my inbox."
 
 ## Development
