@@ -33,7 +33,7 @@ written (case Doc, label, draft, folder, calendar event).
 6. **IDs and holds.** The client ID in the folder, label, case Doc and index line is the
    same. Holds are titled `HOLD <ID> - ...`, have no names, and don't overlap other events.
 7. **Drafts.** The draft goes to the right person, follows the rules (no product, rate or
-   affordability advice, no other client's details) and asks for anything still missing.
+   affordability advice, no other client's details, no client ID or `HOLD` wording) and asks for anything still missing.
 
 ## Report
 

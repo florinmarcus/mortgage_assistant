@@ -24,6 +24,7 @@ Last contact: <date>, <one-word channel>.
 ```
 
 Rules:
+- Use the client's name, not the ID.
 - Facts only from the case Doc and emails. If something is missing, write "not recorded".
 - If a new email isn't in the log yet, say so and offer to update the case file after the call.
 - Stage names: `docs/workflow/case-stages.md`.

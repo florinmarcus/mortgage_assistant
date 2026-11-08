@@ -21,6 +21,8 @@ client, as a list (not a table):
 - To add a client, take the highest ID in the index plus one, and add the line at once,
   before creating anything else, so another session can't take the same ID.
 - Status is `active` or `closed`.
+- IDs are for files, labels and holds. She talks about clients by name, and so do you.
+  Never write an ID in an email to a client.
 
 ## Naming
 

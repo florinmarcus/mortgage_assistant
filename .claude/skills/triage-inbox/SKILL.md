@@ -35,7 +35,7 @@ Stuck: <client - days since last activity>, ...
 Old holds: <ID - offered date>: clear or chase?
 ```
 
-Leave out any line that would be empty.
+Leave out any line that would be empty. Name clients by name, not by ID.
 
 Then wait. Draft only the replies she approves ("yes", "1 and 3", "yes to all"), with her
 changes. Run `case-reviewer` on the drafts, then say "Drafts ready in Gmail".
