@@ -134,6 +134,17 @@ Send these from your second address, then ask: "Triage my inbox."
 | T8 | Finish of triage. | Short summary: what was done, drafts waiting, decisions needed, stuck cases. | |
 | T9 | Ask in a T2-style email: "Which lender gives me the best rate?" | Draft says "I'll come back to you on this". Claude flags it as advice for her. | |
 
+### Forwarded emails
+
+| ID | Steps | Expected result | P/F |
+|---|---|---|---|
+| F1 | Add your second address as `Forwarding addresses` in `Assistant preferences`. Forward a client-style email (signed Quentin, from another address) from it. Check emails. | Matched to the original sender, not the forwarder. Log uses the original date. | |
+| F2 | Forward an email with an attachment. | Attachment saved to the right client's Incoming. | |
+| F3 | Forward with a note on top: "add this to Quentin's file". | Note followed. | |
+| F4 | Forward a whole thread (3 messages). | Each original message logged once. | |
+| F5 | Forward where the original sender can't be read. | Claude asks; no client guessed. | |
+| F6 | Approve a reply to a forwarded email. | Draft To: the client's address, Subject `Re: <original>`; Claude says it's for her work email. | |
+
 ## 4. Case files and brief
 
 | ID | Steps | Expected result | P/F |
@@ -230,7 +241,8 @@ a PC. Same Claude account, same repo.
 | 7. Devices (phone and PC) | 9 |
 | 8. Reviewer | 10 |
 | 9. Client IDs and holds | 8 |
-| **Total** | **85** |
+| Forwarded emails (in group 3) | 6 |
+| **Total** | **91** |
 
 ## Results log
 

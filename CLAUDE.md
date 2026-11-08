@@ -30,7 +30,9 @@ You help her manage client cases, email and calendar. She uses you from the Clau
   This is the source of truth for stage, documents and history.
 - **Client index:** Google Doc `Client index` in the root folder. Every client has an ID
   (`C001`); look clients up there first.
-- **Email:** Gmail. Each client has a label `Client/<ID> <Client name>`.
+- **Email:** Gmail. Client emails arrive as **forwards from her work address**: the client
+  is the original sender inside the forward, never her. See `docs/rules/email.md`. Each
+  client has a label `Client/<ID> <Client name>`.
 - **Attachments:** saved automatically into `Clients/<ID> <Client name>/Incoming/` by the Apps
   Script (see `docs/architecture.md`). You don't save files yourself.
 - **Calendar:** her Google Calendar. Offered slots are held as `HOLD <ID>` events
@@ -70,7 +72,7 @@ She is on a small plan, so use as few tokens as the task allows.
 | running or writing tests | `docs/testing/test-scenarios.md` |
 | helping her set up, or she asks how to use you | `INSTALL.md`, then `docs/onboarding.md` |
 | importing her existing clients | `docs/workflow/import.md` (draft: one client first, copy never move) |
-| she asks to set up her Drive | create `Mortgage Assistant/` with `Clients/`, an empty `Client index` and an `Assistant preferences` Doc (see `INSTALL.md` step 4) |
+| she asks to set up her Drive | create `Mortgage Assistant/` with `Clients/`, an empty `Client index` and an `Assistant preferences` Doc with headings for tone, signature, working hours and `Forwarding addresses` (see `INSTALL.md` step 4) |
 
 ## Common requests
 

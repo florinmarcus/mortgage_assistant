@@ -8,7 +8,8 @@ description: Set up a new client (client ID, Client index line, Gmail label, Dri
 Follow `docs/workflow/case-file.md` (naming and steps) and `templates/case-file.md`.
 
 1. Get the essentials. Ask only for what you can't find in the email: full name,
-   case type (purchase, remortgage, protection), email, phone.
+   case type (purchase, remortgage, protection), email, phone. For a forward, the client's
+   email is the original sender, never her own forwarding address.
 2. Check the client doesn't exist already: search the `Client index` by name, email and
    phone.
 3. Add a line to the Client index with the next ID (highest ID plus one), at once.

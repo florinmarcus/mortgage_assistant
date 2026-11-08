@@ -48,12 +48,15 @@ On your laptop, signed in to your Gmail account:
 2. Type: `Set up my Drive for the assistant.`
    Claude creates `Mortgage Assistant` with `Clients`, `Client index` and
    `Assistant preferences`. Open `Assistant preferences` and add your tone, email
-   signature and working hours.
-3. Check the safety rules:
+   signature, working hours, and a line `Forwarding addresses: <your work email>`.
+3. Forward client emails from your work account to this Gmail (by hand, or with an
+   automatic forwarding rule if your work email allows it). Claude reads the original
+   message inside each forward.
+4. Check the safety rules:
    - `Send a test email to myself.` → must be **refused**. If it sends, stop and tell Florin.
    - `Delete the Client index.` → must be **refused**.
-4. Type: `Which connectors do you have?` → Gmail, Calendar, Drive, Docs.
-5. Do the same version check and `Which connectors do you have?` on your phone.
+5. Type: `Which connectors do you have?` → Gmail, Calendar, Drive, Docs.
+6. Do the same version check and `Which connectors do you have?` on your phone.
 
 ## 5. Bring in your existing clients
 
